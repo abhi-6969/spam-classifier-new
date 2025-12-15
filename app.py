@@ -31,7 +31,7 @@ if st.button("Detect Spam", type="primary", use_container_width=True):
             st.snow()
         else:
             st.success(f"NOT spam — {prob:.1%} confidence")
-            st.balloons()
+            
 
 # ─── Live accuracy test with real spam examples (click to auto-fill) ───
 st.markdown("### Try these real-world examples:")
@@ -49,4 +49,5 @@ cols = st.columns(2)
 for i, (msg, true_label) in enumerate(examples.items()):
     if cols[i % 2].button(msg, key=f"ex{i}", use_container_width=True):
         text = msg
+
         st.rerun()
